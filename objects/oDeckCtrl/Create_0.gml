@@ -1,16 +1,17 @@
 
 // @desc oDeckCtrl - Create
 
-roomGridInc = 32;
-usingPlr = oPlrCtrl.players[0];
-currentDir = undefined;
+//roomGridInc = 32;
+//usingPlr = oPlrCtrl.players[0];
+players = [oPlrCtrl.players[0]];
 
-deckObj = {
-	trigger : true,
-	num : DECKS.HOLD,
-	current : instance_create_layer(oMapMarker.x,oMapMarker.y,"lMain",oHold),
-	prev : undefined
-}
+//currentDir = undefined;
+
+trigger = true;
+num = DECKS.HOLD;
+current = instance_create_layer(oMapMarker.x,oMapMarker.y,"lMain",oHold);
+prev = undefined
+
 
 highlight = {
 	keyDir : function(_obj, _arr, _max) {

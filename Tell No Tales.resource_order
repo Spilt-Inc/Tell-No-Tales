@@ -39,6 +39,7 @@
     {"name":"oSails","order":5,"path":"objects/oSails/oSails.yy",},
     {"name":"oPlrCtrl","order":2,"path":"objects/oPlrCtrl/oPlrCtrl.yy",},
     {"name":"oHold","order":2,"path":"objects/oHold/oHold.yy",},
+    {"name":"oDeck","order":6,"path":"objects/oDeck/oDeck.yy",},
     {"name":"sCargo","order":1,"path":"sprites/sCargo/sCargo.yy",},
   ],
 }

@@ -37,7 +37,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"scDrawDeckItems","path":"scripts/scDrawDeckItems/scDrawDeckItems.yy",},},
@@ -63,6 +63,7 @@
     {"id":{"name":"oDeckCtrl","path":"objects/oDeckCtrl/oDeckCtrl.yy",},},
     {"id":{"name":"oPlrCtrl","path":"objects/oPlrCtrl/oPlrCtrl.yy",},},
     {"id":{"name":"oHold","path":"objects/oHold/oHold.yy",},},
+    {"id":{"name":"oDeck","path":"objects/oDeck/oDeck.yy",},},
     {"id":{"name":"sCargo","path":"sprites/sCargo/sCargo.yy",},},
     {"id":{"name":"rMain","path":"rooms/rMain/rMain.yy",},},
   ],

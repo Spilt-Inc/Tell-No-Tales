@@ -9,8 +9,7 @@ yScaleOrig = 10;
 image_xscale = 6;
 image_yscale = 10;
 
-oConstant.roomGridInc = (sprite_width / xScaleOrig) / 2;
-roomGridInc = oConstant.roomGridInc;
+roomGridInc = (sprite_width / xScaleOrig) / 2;
 
 cannonPreset = {
 	name : [0,0, "Mid Starboard",0,"Mid Port","Fore Port","Fore Starboard","Aft Starboard","Aft Port"],
