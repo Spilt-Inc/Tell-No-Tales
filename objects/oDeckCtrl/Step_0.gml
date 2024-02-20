@@ -35,16 +35,18 @@ if (deckObj.num == DECKS.NUMDECKS) {
 
 #region Switching Decks
 
+createDeck(deckObj.num);
+
 switch deckObj.num {
 	
 	case DECKS.BILGE	:
-		createDeck(deckObj,oBilge,oSails);
+		createDeck(DECKS.BILGE);
 	break;
 	
 	/////////////////////////
 	
 	case DECKS.HOLD	:
-		createDeck(deckObj,oHold,oBilge);
+		createDeck(oHold);
 	break;
 	
 	/////////////////////////

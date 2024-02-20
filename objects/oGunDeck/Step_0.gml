@@ -6,8 +6,5 @@
 
 createSelectStats(cannonPreset,roomGridInc,DIRS.NUMDIRS);
 
-layer
-
-
 
 
