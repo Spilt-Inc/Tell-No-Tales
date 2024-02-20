@@ -20,6 +20,14 @@ cannonPreset = {
 	subImg : [0, 0,2,0,2, 2,2,2,2]
 }
 
+preset = [
+	{
+		top: {
+			name: "port",
+			pos: { x: 0, y: 0
+		}
+]
+
 createSelectStats(cannonPreset,roomGridInc,DIRS.NUMDIRS);
 
 //function drawGunDeck(){
