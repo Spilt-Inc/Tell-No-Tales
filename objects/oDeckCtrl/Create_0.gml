@@ -7,6 +7,13 @@ players = [oPlrCtrl.players[0]];
 
 //currentDir = undefined;
 
+deckObj = {
+	trigger : true,
+	num : DECKS.HOLD,
+	current : instance_create_layer(oMapMarker.x,oMapMarker.y,"lMain",oHold),
+	prev : undefined
+}
+
 trigger = true;
 num = DECKS.HOLD;
 current = instance_create_layer(oMapMarker.x,oMapMarker.y,"lMain",oHold);
