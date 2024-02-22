@@ -14,3 +14,66 @@ preset = {
 	height : [0, 0,2,0,2, 2,2,2,2],
 	subImg : [0, 0,2,0,2, 2,2,2,2]
 }
+
+preset = [
+	{
+		pos: "up",
+		name: null,
+	},
+		{
+		pos: "upRight",
+		name: "fore starboard",
+		x: 0, 
+		y: 0,
+		width: 10,
+		height: 10
+	},
+	{
+		pos: "right",
+		name: "mid starboard",
+		x: 0, 
+		y: 0,
+		width: 10,
+		height: 10
+	},
+	{
+		pos: "downRight",
+		name: "aft starboard",
+		x: 0, 
+		y: 0,
+		width: 10,
+		height: 10
+	},
+	{
+		pos: "down",
+		name: null,
+	},
+	{
+		pos: "downLeft",
+		name: "aft port"
+		x: 0, 
+		y: 0,
+		width: 10,
+		height: 10
+	},
+	{
+		pos: "left",
+		name: "mid port",
+		x: 0, 
+		y: 0,
+		width: 10,
+		height: 10
+	},
+	{
+		pos: "upLeft",
+		name: "fore port",
+		x: 0, 
+		y: 0,
+		width: 10,
+		height: 10
+	},
+{
+		pos: "none",
+		name: null,
+	},
+]
