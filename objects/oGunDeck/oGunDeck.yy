@@ -14,7 +14,10 @@
     "name": "Deck Object",
     "path": "folders/Objects/Deck Object.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oDeck",
+    "path": "objects/oDeck/oDeck.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
