@@ -22,6 +22,8 @@ bilgePreset = {
 	subImg : [0, 1,1,1,1, 1,1,1,1]
 }
 
+goi
+
 createSelectStats(bilgePreset,roomGridInc,DIRS.NUMDIRS);
 
 
