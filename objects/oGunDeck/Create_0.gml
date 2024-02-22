@@ -20,13 +20,13 @@ cannonPreset = {
 	subImg : [0, 0,2,0,2, 2,2,2,2]
 }
 
-preset = [
+areas = [
 	{
-		pos: "up",
+		keyDir: "up",
 		name: null,
 	},
 		{
-		pos: "upRight",
+		keyDir: "upRight",
 		name: "fore starboard",
 		x: 0, 
 		y: 0,
@@ -34,7 +34,7 @@ preset = [
 		height: 10
 	},
 	{
-		pos: "right",
+		keyDir: "right",
 		name: "mid starboard",
 		x: 0, 
 		y: 0,
@@ -42,7 +42,7 @@ preset = [
 		height: 10
 	},
 	{
-		pos: "downRight",
+		keyDir: "downRight",
 		name: "aft starboard",
 		x: 0, 
 		y: 0,
@@ -50,11 +50,11 @@ preset = [
 		height: 10
 	},
 	{
-		pos: "down",
+		keyDir: "down",
 		name: null,
 	},
 	{
-		pos: "downLeft",
+		keyDir: "downLeft",
 		name: "aft port"
 		x: 0, 
 		y: 0,
@@ -62,7 +62,7 @@ preset = [
 		height: 10
 	},
 	{
-		pos: "left",
+		keyDir: "left",
 		name: "mid port",
 		x: 0, 
 		y: 0,
@@ -70,7 +70,7 @@ preset = [
 		height: 10
 	},
 	{
-		pos: "upLeft",
+		keyDir: "upLeft",
 		name: "fore port",
 		x: 0, 
 		y: 0,
@@ -78,7 +78,7 @@ preset = [
 		height: 10
 	},
 {
-		pos: "none",
+		keyDir: "none",
 		name: null,
 	},
 ]
