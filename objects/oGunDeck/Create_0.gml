@@ -1,15 +1,28 @@
 
 /// @desc oGunDeck - Create
 
-
 image_speed = 0;
 image_index = DECKS.GUNDECK;
-xScaleOrig = 6;
-yScaleOrig = 10;
+
+// xScaleOrig = 6;
+unitsWide = 6;
+
+// yScaleOrig
+unitsHigh = 10;
+
 image_xscale = 6;
 image_yscale = 10;
 
-roomGridInc = (sprite_width / xScaleOrig) / 2;
+sprite_width = 384;
+sprite_height = 640;
+
+unitLength = (sprite_width / xScaleOrig) / 2;
+// unscaled unitLength = 32
+
+spriteWidth = (unitLength * 2) * unitsWide;
+spriteHeight = (unitLength * 2) * unitsHigh;
+
+
 
 cannonPreset = {
 	name : [0,0, "Mid Starboard",0,"Mid Port","Fore Port","Fore Starboard","Aft Starboard","Aft Port"],
