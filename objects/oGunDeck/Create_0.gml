@@ -22,10 +22,61 @@ cannonPreset = {
 
 preset = [
 	{
-		top: {
-			name: "port",
-			pos: { x: 0, y: 0
-		}
+		pos: "up",
+		name: null,
+	},
+		{
+		pos: "upRight",
+		name: "fore starboard",
+	},
+	{
+		pos: "right",
+		name: "mid starboard",
+		x: 0, 
+		y: 0,
+		width: 10,
+		height: 10
+	},
+	{
+		pos: "downRight",
+		name: "aft starboard,
+		x: 0, 
+		y: 0,
+		width: 10,
+		height: 10
+	},
+	{
+		pos: "down",
+		name: null,
+	},
+	{
+		pos: "downLeft",
+		name: "aft port"
+		x: 0, 
+		y: 0,
+		width: 10,
+		height: 10
+	},
+	{
+		pos: "left",
+		name: "mid port",
+		x: 0, 
+		y: 0,
+		width: 10,
+		height: 10
+	},
+	{
+		pos: "upLeft",
+		name: "fore port",
+		x: 0, 
+		y: 0,
+		width: 10,
+		height: 10
+	},
+{
+		pos: "none",
+		name: null,
+	},
 ]
 
 createSelectStats(cannonPreset,roomGridInc,DIRS.NUMDIRS);
