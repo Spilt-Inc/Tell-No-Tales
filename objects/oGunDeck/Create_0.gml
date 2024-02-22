@@ -4,7 +4,7 @@
 image_speed = 0;
 image_index = DECKS.GUNDECK;
 
-// xScaleOrig = 6;
+// xScaleOrig
 unitsWide = 6;
 
 // yScaleOrig
