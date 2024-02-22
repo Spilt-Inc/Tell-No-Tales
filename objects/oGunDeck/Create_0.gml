@@ -43,7 +43,7 @@ preset = [
 	},
 	{
 		pos: "downRight",
-		name: "aft starboard,
+		name: "aft starboard",
 		x: 0, 
 		y: 0,
 		width: 10,
