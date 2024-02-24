@@ -10,11 +10,13 @@ deckHeight_cells = 20;
 
 // xScaleOrig = 6
 // image_xscale = 6
-image_xscale = cellSize * deckWidth_cells / sprite_width;
+spriteWidth_original = sprite_width;
+image_xscale = cellSize * deckWidth_cells / spriteWidth_original;
 
 // yScaleOrig = 12
 // image_yscale = 12
-image_yscale = cellSize * deckHeight_cells / sprite_height;
+spriteHeight_original = sprite_height;
+image_yscale = cellSize * deckHeight_cells / spriteHeight_original;
 
 // DELETE ==== FROM
 
