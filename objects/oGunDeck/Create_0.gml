@@ -6,6 +6,14 @@ image_index = DECKS.GUNDECK;
 
 cellSize = 32 // pixels
 
+deckHWidth_cells = 6;
+deckHeight_cells = 10;
+
+
+
+
+sprite_width 
+
 // xScaleOrig
 cellsWide = 6;
 
