@@ -35,6 +35,16 @@ cannonPreset = {
 	subImg : [0, 0,2,0,2, 2,2,2,2]
 }
 
+{
+			name: areas[i].name,
+			x : _deckObj.x + (areas[i] * roomGridInc),
+			y : _deckObj.y + (areas[i] * roomGridInc),
+			xScale : areas[i].width * (image_xscale / xScaleOrig),
+			yScale : areas[i].height * (image_yscale / yScaleOrig),
+			subImg : areas[i].subImg,
+			colour : c_grey,
+			selected : false
+
 areas = [
 	{
 		keyDir: "up",
@@ -45,6 +55,7 @@ areas = [
 		name: "fore starboard",
 		x: 0, 
 		y: 0,
+		xAbs: x + 0
 		width: 10,
 		height: 10
 	},
