@@ -5,10 +5,10 @@ image_speed = 0;
 image_index = DECKS.GUNDECK;
 
 // xScaleOrig
-unitsWide = 6;
+blocksWide = 6;
 
 // yScaleOrig
-unitsHigh = 10;
+blocksHigh = 10;
 
 image_xscale = 6;
 image_yscale = 10;
@@ -16,8 +16,8 @@ image_yscale = 10;
 sprite_width = 384;
 sprite_height = 640;
 
-unitLength = (sprite_width / xScaleOrig) / 2;
-// unscaled unitLength = 32
+blockSize = (sprite_width / xScaleOrig) / 2;
+// blockSize = 32px
 
 spriteWidth = (unitLength * 2) * unitsWide;
 spriteHeight = (unitLength * 2) * unitsHigh;
