@@ -6,11 +6,11 @@ image_index = DECKS.GUNDECK;
 
 cellSize = 32 // pixels
 
-deckHWidth_cells = 6;
-deckHeight_cells = 10;
+deckHWidth_cells = 12;
+deckHeight_cells = 20;
 
-
-
+image_xscale = cellSize * deckWidth_cells / sprite_width;
+image_yscale = cellSize * deckHeight_cells / sprite_height;
 
 sprite_width 
 
