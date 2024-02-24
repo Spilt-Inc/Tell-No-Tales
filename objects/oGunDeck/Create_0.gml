@@ -53,8 +53,8 @@ areas = [
 		{
 		keyDir: "upRight",
 		name: "fore starboard",
-		x: 0, 
-		y: 0,
+		x_blocks: 0, 
+		y_blocks: 0,
 		xAbs: x + 0
 		width: 10,
 		height: 10
@@ -62,16 +62,16 @@ areas = [
 	{
 		keyDir: "right",
 		name: "mid starboard",
-		x: 0, 
-		y: 0,
+		x_blocks: 0, 
+		y_blocks: 0,
 		width: 10,
 		height: 10
 	},
 	{
 		keyDir: "downRight",
 		name: "aft starboard",
-		x: 0, 
-		y: 0,
+		x_blocks: 0, 
+		y_blocks: 0,
 		width: 10,
 		height: 10
 	},
@@ -82,24 +82,24 @@ areas = [
 	{
 		keyDir: "downLeft",
 		name: "aft port"
-		x: 0, 
-		y: 0,
+		x_blocks: 0, 
+		y_blocks: 0,
 		width: 10,
 		height: 10
 	},
 	{
 		keyDir: "left",
 		name: "mid port",
-		x: 0, 
-		y: 0,
+		x_blocks: 0, 
+		y_blocks: 0,
 		width: 10,
 		height: 10
 	},
 	{
 		keyDir: "upLeft",
 		name: "fore port",
-		x: 0, 
-		y: 0,
+		x_blocks: 0, 
+		y_blocks: 0,
 		width: 10,
 		height: 10
 	},
