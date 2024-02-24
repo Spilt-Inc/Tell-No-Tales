@@ -1,4 +1,3 @@
-
 /// @desc oGunDeck - Create
 
 image_speed = 0;
@@ -9,30 +8,23 @@ cellSize = 32 // pixels
 deckHWidth_cells = 12;
 deckHeight_cells = 20;
 
+// xScaleOrig = 6
+// image_xscale = 6
 image_xscale = cellSize * deckWidth_cells / sprite_width;
+
+// yScaleOrig = 12
+// image_yscale = 12
 image_yscale = cellSize * deckHeight_cells / sprite_height;
 
-sprite_width 
+// DELETE ==== FROM
 
-// xScaleOrig
-cellsWide = 6;
+// sprite_width = 384;
+// sprite_height = 640;
 
-// yScaleOrig
-cellsHigh = 10;
+// cellSize = (sprite_width / xScaleOrig) / 2;
+// cellSize = 32
 
-image_xscale = 6;
-image_yscale = 10;
-
-sprite_width = 384;
-sprite_height = 640;
-
-cellSize = (sprite_width / xScaleOrig) / 2;
-// cellSize = 32px
-
-spriteWidth = (unitLength * 2) * unitsWide;
-spriteHeight = (unitLength * 2) * unitsHigh;
-
-
+// DELETE ==== TO
 
 cannonPreset = {
 	name : [0,0, "Mid Starboard",0,"Mid Port","Fore Port","Fore Starboard","Aft Starboard","Aft Port"],
