@@ -4,30 +4,36 @@
 
 image_speed = 0;
 image_index = DECKS.GUNDECK;
-xScaleOrig = 6;
-yScaleOrig = 10;
-image_xscale = 6;
-image_yscale = 10;
 
-oConstant.roomGridInc = (sprite_width / xScaleOrig) / 2;
+var _xOffset, _x1, _x2, _y1, _y2, _y3;
+_xOffset = 110;
+_x1 = _xOffset;
+_x2 = -_xOffset;
+_y1 = 680;
+_y2 = 480;
+_y3 = 340;
+
+//oConstant.roomGridInc = (sprite_width / xScaleOrig) / 2;
 roomGridInc = oConstant.roomGridInc;
 
 cannonPreset = {
 	name : [0,0, "Mid Starboard",0,"Mid Port","Fore Port","Fore Starboard","Aft Starboard","Aft Port"],
-	x : [0, 0,3,0,-3, -3,3,3,-3],
-	y : [0, 0,0,0,0, -8,-8,8,8], 
-	width : [0, 0,3,0,3, 3,3,3,3],
-	height : [0, 0,2,0,2, 2,2,2,2],
-	subImg : [0, 0,2,0,2, 2,2,2,2]
+	x : [0, 0,_x1,0,_x2, _x2,_x1,_x1,_x2],
+	y : [0, 0,_y2,0,_y2, _y1,_y1,_y3,_y3], 
+	width : [0, 0,1,0,-1, -1,1,1,-1],
+	height : [0, 0,1,0,1, 1,1,1,1],
+	sprite : [sCannon, sCannon,sCannon,sCannon,sCannon, sCannon,sCannon,sCannon,sCannon],
+	subImg : [0, 0,0,0,0, 0,0,0,0],
+	HLSprite : [sCannonHighlight, sCannonHighlight,sCannonHighlight,sCannonHighlight,sCannonHighlight, sCannonHighlight,sCannonHighlight,sCannonHighlight,sCannonHighlight],
+	HLSubImg : [0, 0,0,0,0, 0,0,0,0]
 }
 
 createSelectStats(cannonPreset,roomGridInc,DIRS.NUMDIRS);
 
-//function drawGunDeck(){
-//	for (var i = DIRS.NUMDIRS - 1; i >= 0; i--){
-//		draw_sprite_ext(sCargo,3,selectStats[i].x,selectStats[i].y,selectStats[i].xScale,selectStats[i].yScale,0,selectStats[i].colour,1);
-//	}
-//}
+//Animation
+cannonAnimCountMax = 10;
+for (var i = 0; i < DIRS.NUMDIRS; i++) { oDeckCtrl.cannons.animCount[i] = animCountMax} ;
+cannonSubImg = 0;
 
 
 

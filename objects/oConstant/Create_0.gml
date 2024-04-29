@@ -33,5 +33,13 @@ enum DECKS{
 	NUMDECKS = 5
 }
 
+enum PLRITEMS {
+	BUCKET,
+	TIMBER,
+	CANNONBALLS,
+	SAILCLOTH,
+	GROG
+}
+
 #endregion
 

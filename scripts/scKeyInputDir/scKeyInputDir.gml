@@ -2,6 +2,19 @@
 ///@arg0 object
 ///@arg1 usingPlr
 
+//		/*
+//		Creates an array for sequence of selection options in a radial pattern:
+//		0. No Direction
+//		1. Up
+//		2. Right
+//		3. Down
+//		4. Left
+//		5. UpLeft
+//		6. UpRight
+//		7. DownRight
+//		8. DownLeft
+//		*/
+
 function keyInputDir(_obj,_plr){
 
 	var _keyDir = {x : undefined, y : undefined};

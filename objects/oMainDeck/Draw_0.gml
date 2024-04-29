@@ -3,7 +3,7 @@
 
 
 
-drawDeckObj();
+drawDeckObj(sCargo);
 
 
 

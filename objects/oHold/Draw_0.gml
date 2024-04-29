@@ -1,6 +1,8 @@
 
 /// @desc oHold - Draw
 
-draw_self();
-drawDeckObj();
+
+drawDeckObj(sCargo,x,y);
+
+
 

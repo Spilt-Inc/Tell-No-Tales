@@ -13,7 +13,10 @@ key.ltPrs = keyboard_check_pressed(ord("A"));
 key.rrPrs = keyboard_check_pressed(ord("D"));
 	
 key.action = keyboard_check(vk_space);
+key.actionPrs = keyboard_check_pressed(vk_space);
 key.tab = keyboard_check_pressed(vk_tab);
+key.deckUp = keyboard_check_pressed(vk_tab);
+key. deckDn =  keyboard_check_pressed(vk_control);
 
 event_inherited();
 

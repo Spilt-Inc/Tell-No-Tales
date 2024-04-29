@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scUpdateSelectStats",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Select Stats Scripts",
-    "path": "folders/Scripts/Select Stats Scripts.yy",
+  "$GMScript":"",
+  "%Name":"scUpdateSelectStats",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scUpdateSelectStats",
+  "parent":{
+    "name":"Select Stats Scripts",
+    "path":"folders/Scripts/Select Stats Scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

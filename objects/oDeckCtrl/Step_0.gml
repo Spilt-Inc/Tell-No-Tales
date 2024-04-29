@@ -2,31 +2,34 @@
 // @desc oDeckCtrl - Step
 
 
+
+
 #region Deck Setup 
 
 var _usingPlr = usingPlr;
 var _deckObj = deckObj.current;
 
-if (deckObj.num == DECKS.SAILS) {
-	//keyInputList(usingPlr,deckObj.selectedSail)
-	var _numItems = numSails;
+//Background layer change
+var lay_id = layer_get_id("Background");
+var back_id = layer_background_get_id(lay_id);
+if deckObj.num < DECKS.MAINDECK{
+	layer_background_blend(back_id, c_black);
 }
-else {
+else layer_background_blend(back_id, c_blue);
+
+//Assigning key input for directional
+if (deckObj.num != DECKS.SAILS) {
+	for (var i = 0; i < DIRS.NUMDIRS; i++){
+		_deckObj.selectStats[i].selected = false;
+	}
 	keyInputDir(deckObj.current,usingPlr);
 	var _numItems = DIRS.NUMDIRS;
 }
-highlight.keyDir(_deckObj,_deckObj.selectStats,_numItems);
+//highlight.keyDir(_deckObj,_deckObj.selectStats,_numItems);
 
-if (_usingPlr.key.tab) {
-	deckObj.num++;
-	deckChangeAnim.xScaleFactor = deckScaleMax;
-	deckChangeAnim.yScaleFactor = deckScaleMax;
-	deckChangeAnim.trigger = true;
-	deckObj.trigger = true;
-}
-if (deckObj.num == DECKS.NUMDECKS) {
-	deckObj.num = 0;
-}
+DrawDeckObjHL(_deckObj.selectStats);
+
+shipHitAdd();
 
 #endregion
 
@@ -35,6 +38,16 @@ if (deckObj.num == DECKS.NUMDECKS) {
 
 #region Switching Decks
 
+//Inititating switching decks
+var _deckPrev = deckObj.num;
+deckObj.num = keyInputList(_usingPlr.key.deckUp, _usingPlr.key.deckDn, deckObj.num);
+deckObj.num = median(0, DECKS.NUMDECKS - 1, deckObj.num);
+if _deckPrev != deckObj.num {
+	deckChangeAnim.trigger = true;
+	deckObj.trigger = true;	
+}
+
+//Executing switching decks
 switch deckObj.num {
 	
 	case DECKS.BILGE	:
@@ -79,28 +92,34 @@ switch deckObj.num {
 if (deckChangeAnim.trigger) {
 	var _deckObj = deckObj.current;
 	var _prevDeckObj = deckObj.prev;
-	// X Scale
-	if (_deckObj.image_xscale >= _deckObj.xScaleOrig) {
-		deckChangeAnim.xScaleFactor -= deckChangeAnim.scaleInc;
-		_deckObj.image_xscale = _deckObj.xScaleOrig * deckChangeAnim.xScaleFactor;
-		if (instance_exists(_prevDeckObj)) _prevDeckObj.image_xscale = (_deckObj.xScaleOrig * (deckChangeAnim.xScaleFactor / deckScaleMax));
+	yDist -= yInc;
+	with (_deckObj) {
+		y = oMapMarker.y - other.yDist;
+		x = oMapMarker.x;
+		if (y >= oMapMarker.y + - other.yInc) {
+			y = oMapMarker.y;
+			other.yDist = other.yDistMax;
+			other.deckChangeAnim.trigger = false;
+			other.deckChangeAnim.fadeGo = true;
+		}
 	}
-	//YScale
-	if (_deckObj.image_yscale >= _deckObj.yScaleOrig) {
-		deckChangeAnim.yScaleFactor -= deckChangeAnim.scaleInc;
-		_deckObj.image_yscale = _deckObj.yScaleOrig * deckChangeAnim.yScaleFactor;
-		if (instance_exists(_prevDeckObj)) _prevDeckObj.image_yscale = (_deckObj.yScaleOrig * (deckChangeAnim.xScaleFactor / deckScaleMax));
-	}
-	//Alpha
-	_deckObj.image_alpha = 1 - ((deckChangeAnim.xScaleFactor - 1) / (deckScaleMax - 1));
-	if (instance_exists(_prevDeckObj)) _prevDeckObj.image_alpha = (deckChangeAnim.xScaleFactor - 1) / (deckScaleMax - 1);
+	//with (_prevDeckObj) {
+	//	x = oMapMarker.x;
+	//	y = oMapMarker.y;
+	//}
 	
-	//Ending animation
-	if (_deckObj.image_xscale <= _deckObj.xScaleOrig && _deckObj.image_yscale <= _deckObj.yScaleOrig) {
-		deckChangeAnim.trigger = false;	
-		if (instance_exists(_prevDeckObj)) instance_destroy(_prevDeckObj);
+	deckChangeAnim.prevYDist += 5;
+}
+if deckChangeAnim.fadeGo {
+	deckChangeAnim.alpha -= 0.1;
+	if deckChangeAnim.alpha <= 0 {
+		deckChangeAnim.fadeGo = false;
+		deckChangeAnim.prevYDist = 0;
+		deckChangeAnim.prevYDistFinal = 0;
 	}
 }
+
+
 
 #endregion
 
@@ -109,7 +128,10 @@ if (deckChangeAnim.trigger) {
 
 #region Bilge Management
 
+createBreach();
 repairBreach(_usingPlr,deckObj.num,bilgeBreaches);
+shipDamageAdd();
+shipHeal();
 
 #endregion
 
@@ -128,6 +150,19 @@ if (shotCount.stbdCannonCount <= 0) {
 	shotCount.stbdCannonCount = irandom_range(shotCountMax / 4,shotCountMax);
 }
 
+reloadCannon(_usingPlr);
+
+
+
 #endregion
 
+////////////////////
+
+
+#region Sails Management
+
+createSailDamage();
+if (deckObj.current.object_index == oSails) repairSail(_usingPlr,deckObj.current.selectedSail);
+
+#endregion
 

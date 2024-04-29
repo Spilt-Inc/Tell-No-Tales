@@ -2,13 +2,16 @@
 /// @desc oGunDeck - Draw
 
 
-drawDeckObj();
+drawDeckObj(sCargo);
 
 
 for (var i = 0; i < DIRS.NUMDIRS; i++) {
 	var _cannons = oDeckCtrl.cannons;
-	var _x = oDeckCtrl.deckObj.current.x + (cannonPreset.x[i] * roomGridInc);
-	var _y = oDeckCtrl.deckObj.current.y + (cannonPreset.y[i] * roomGridInc);
-	draw_text(_x, _y, string(_cannons.numShots[i]));
+	var _cannonRackXOffset = -40;
+	var _cannonRackYOffset = 30;
+	var _selectStats = selectStats[i];
+	var _x = _selectStats.x + (sign(_selectStats.width) * _cannonRackXOffset);
+	var _y = _selectStats.y + _cannonRackYOffset;
+	draw_sprite_ext(sCannonRack, _cannons.numShots[i], _x, _y, _selectStats.width, _selectStats.height, 0, c_white, 1);
 }
 
