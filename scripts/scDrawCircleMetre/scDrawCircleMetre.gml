@@ -15,8 +15,8 @@ function DrawCircleMetre(_x, _y, _value, _max, _clr, _rad, _alpha, _width) {
 		draw_set_alpha(_alpha);
 		
 		surface_set_target(metreSurf);
-		draw_clear_alpha(c_blue, 0.7);
-		draw_clear_alpha(c_black, 0);
+		//draw_clear_alpha(c_blue, 0.0);
+		//draw_clear_alpha(c_black, 0);
 		
 		draw_primitive_begin(pr_trianglefan);
 		draw_vertex(_rad, _rad);

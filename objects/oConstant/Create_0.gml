@@ -35,10 +35,10 @@ enum DECKS{
 
 enum PLRITEMS {
 	BUCKET,
+	GROG,
 	TIMBER,
 	CANNONBALLS,
 	SAILCLOTH,
-	GROG
 }
 
 #endregion

@@ -8,9 +8,8 @@ if (oDeckCtrl.deckChangeAnim.trigger) {
 draw_self();
 
 for (var i = numSails - 1; i >= 0; i--){
-	var _y = selectStats[i].yy;
 	var _selectStats = selectStats[i];
-	draw_sprite_ext(sMainMast, _selectStats.subImg, x, _y, 1, 1, 0, _selectStats.colour, _selectStats.alpha);
+	draw_sprite_ext(sMainMast, _selectStats.subImg, _selectStats.xx, _selectStats.yy, 1, 1, oDeckCtrl.deckObj.current.image_angle, _selectStats.colour, _selectStats.alpha);
 }
 
 draw_set_color(c_black);

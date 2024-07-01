@@ -32,5 +32,5 @@
     "path":"sprites/sMapMarker/sMapMarker.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

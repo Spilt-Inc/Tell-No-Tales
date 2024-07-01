@@ -20,7 +20,7 @@ function keyInputDir(_obj,_plr){
 	var _keyDir = {x : undefined, y : undefined};
 	_keyDir.x = _plr.key.right - _plr.key.left;
 	_keyDir.y = _plr.key.down - _plr.key.up;
-	var _numDirs = 8;
+	var _numDirs = DIRS.NUMDIRS - 1;
 	var _selection = undefined;
 	
 	//No direction

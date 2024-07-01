@@ -11,8 +11,10 @@ updateSelectStats(bilgePreset,roomGridInc,DIRS.NUMDIRS);
 animCount--;
 if animCount < 0 {
 	for (var i = 0; i < DIRS.NUMDIRS; i++) {
-		selectStats[i].subImg++;
-		animCount = animCountMax;
+		if (selectStats[i].exists) {
+			selectStats[i].subImg++;
+			animCount = animCountMax;
+		}
 	}
 }
 

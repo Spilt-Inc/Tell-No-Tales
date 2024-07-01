@@ -34,7 +34,8 @@ for (var i = numSails - 1; i >= 0; i--){
 		alpha : sailsPreset.alpha[i],
 		colour : c_grey,
 		selected : false,
-		colour : c_white
+		colour : c_white,
+		exists : true
 	}
 }
 
@@ -85,6 +86,20 @@ function camAdjust() {
 		}
 	}
 }
+
+////////////////////
+
+
+#region Movement
+
+maxSpd = 5;
+acc = maxSpd * 0.01;
+brakeSpd = maxSpd * 0.05;
+turnSpd = 2; 		
+
+#region
+
+////////////////////
 
 
 

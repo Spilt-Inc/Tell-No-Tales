@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sTawny",
-    "path":"sprites/sTawny/sTawny.yy",
+    "name":"sSwazeWheel",
+    "path":"sprites/sSwazeWheel/sSwazeWheel.yy",
   },
   "spriteMaskId":null,
   "visible":true,

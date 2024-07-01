@@ -5,8 +5,12 @@
 //game_set_speed(2,gamespeed_fps);
 
 usingPlr = oPlrCtrl.players[0];
-currentDir = undefined;
+currentDir = 0;
 deckPrevYDist = 0;
+deckPrev = undefined;
+
+#macro numCargoOptions 4
+#macro numMainDeckDirs 2
 
 deckObj = {
 	trigger : true,
@@ -14,35 +18,6 @@ deckObj = {
 	current : instance_create_layer(oMapMarker.x,oMapMarker.y,"lMain",oHold),
 	prev : undefined
 }
-
-//highlight = {
-//	keyDir : function(_obj, _arr, _max) {
-//		/*
-//		Creates an array for sequence of selection options in a radial pattern:
-//		0. No Direction
-//		1. Up
-//		2. Right
-//		3. Down
-//		4. Left
-//		5. UpLeft
-//		6. UpRight
-//		7. DownRight
-//		8. DownLeft
-//		*/
-//		for (var i = 0; i < _max; i++) {	 
-//			with _obj{
-//				if oDeckCtrl.deckObj.num != DECKS.SAILS {
-//					if _arr[i].selected{
-//						//_arr[i].selected = false;
-//					} 
-//					else {
-//						_arr[i].colour = c_grey;
-//					}
-//				}
-//			}
-//		}
-//	}
-//}
 
 ////Deck Change Animation
 yDistMax = 500;
@@ -64,11 +39,12 @@ deckChangeAnim = {
 shipDamage = 0;
 shipDamagePrev = shipDamage;
 shipDamageMax = 10;
+shipDamageDeath = 99;
 damageCountMax = 500;
 damageCount = damageCountMax;
 bilgeDamageGo = false;
 sailsDamageGo = false;
-bucketContentsMax = 1;
+bucketContentsMax = 50;
 bucketContents = 0;
 function shipHitAdd() {
 	damageCount--;
@@ -82,9 +58,10 @@ function shipDamageAdd() {
 	shipDamagePrev = shipDamage;
 	for (var i = 1; i < DIRS.NUMDIRS; i++) {
 		if bilgeBreaches[i].active {
-			shipDamage += 0.001;	
+			shipDamage += 0.01;	
 		}
 	}
+	shipDamage = min(shipDamage, shipDamageDeath);
 }
 function shipHeal() {
 	if usingPlr.key.actionPrs && deckObj.num == DECKS.BILGE && usingPlr.currentItem.name == "Bucket" {
@@ -103,8 +80,9 @@ function shipHeal() {
 
 #region Bilge Management
 
+#macro numBreaches 8
 #macro repairCountMax 200
-stageAnimGo = [1, 2, 3];
+stageAnimGo = [1, 2, 3, 4];
 
 for (var i = DIRS.NUMDIRS - 1; i >= 0; i--) {
 	bilgeBreaches[i] = {
@@ -127,7 +105,7 @@ function repairBreach(_plr,_objNum,_arr) {
 			if (_arr[i].repairCount <= 0) && (_arr[i].active == true) {
 				_arr[i].active = false;
 				_plr.currentItem.amount--;
-				_arr[currentDir].repairCount = repairCountMax;		
+				_arr[currentDir].repairCount = repairCountMax;
 			}
 		}
 	}
@@ -162,7 +140,6 @@ cannons = {
 	numShots : [0, 0, maxShots, 0, maxShots,maxShots,maxShots,maxShots,maxShots],
 	portOrNot : [-1, -1, true, -1, false, false, true, true, false],
 	animGo : [0, 0,false,0,false, false,false,false,false],
-	animCount : [0, 0,10,0,10, 10,10,10,10,]
 }
 
 function fireCannon(_shotCount,_portOrNot) {
@@ -224,6 +201,10 @@ function repairSail(_plr,_sailNum) {
 }
 
 #endregion
+
+////////////////////
+
+
 
 
 

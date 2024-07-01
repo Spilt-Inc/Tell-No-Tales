@@ -7,6 +7,7 @@ image_index = DECKS.BILGE;
 
 //oConstant.roomGridInc = (sprite_width / xScaleOrig) / 2;
 roomGridInc = oConstant.roomGridInc;
+numDeckDirs = 8;
 currentDir = 0;
 
 #macro animCountMax 5
@@ -31,20 +32,35 @@ bilgePreset = {
 	sprite : [sBreachHrz, sBreachVrt,sBreachHrz,sBreachVrt,sBreachHrz, sBreachHrz,sBreachHrz,sBreachHrz,sBreachHrz],
 	subImg : [0, 0,0,0,0, 0,0,0,0],
 	HLSprite : [sCargo, sCargo,sCargo,sCargo,sCargo, sCargo,sCargo,sCargo,sCargo,],
-	HLSubImg : [0, 1,1,1,1, 1,1,1,1]
+	HLSubImg : [0, 1,1,1,1, 1,1,1,1],
+	rad : [0, 50,50,50,50, 0,0,0,0]
 }
 
-createSelectStats(bilgePreset,roomGridInc,DIRS.NUMDIRS);
+createSelectStats(false,true,true,true,bilgePreset,roomGridInc,DIRS.NUMDIRS);
 
 floodInst = undefined;
 floodGo = true;
-floodAnimUnit = 10;
+floodAnimUnit = 25;
 function floodAnim() {	
 	if (floodGo) && (oDeckCtrl.shipDamage > 0) {
 		floodInst = instance_create_layer(x, y, "lFront", oFlood);
 		floodGo = false;
 	}
 }
+
+////////////////////
+
+
+#region Movement
+
+maxSpd = 5;
+acc = maxSpd * 0.01;
+brakeSpd = maxSpd * 0.05;
+turnSpd = 2; 		
+
+#region
+
+////////////////////
 
 
 

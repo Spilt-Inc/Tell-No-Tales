@@ -8,15 +8,17 @@ var _shipDamage = oDeckCtrl.shipDamage;
 x = _deckObj.x;
 y = _deckObj.y;
 
-if (median(_shipDamage , 0, oBilge.floodAnimUnit) == _shipDamage) {
-	floodStage = FLOODSTAGES.STAGE1;	
-}
-if (median(_shipDamage , oBilge.floodAnimUnit, oBilge.floodAnimUnit * 2) == _shipDamage) {
-	floodStage = FLOODSTAGES.STAGE2;	
-}
-if (median(_shipDamage , oBilge.floodAnimUnit * 2, oBilge.floodAnimUnit * 3) == _shipDamage) {
-	floodStage = FLOODSTAGES.STAGE3;	
-}
+//if (median(_shipDamage , 0, oBilge.floodAnimUnit) == _shipDamage) {
+//	floodStage = FLOODSTAGES.STAGE1;	
+//}
+//if (median(_shipDamage , oBilge.floodAnimUnit, oBilge.floodAnimUnit * 2) == _shipDamage) {
+//	floodStage = FLOODSTAGES.STAGE2;	
+//}
+//if (median(_shipDamage , oBilge.floodAnimUnit * 2, oBilge.floodAnimUnit * 3) == _shipDamage) {
+//	floodStage = FLOODSTAGES.STAGE3;	
+//}
+
+floodStage = floor(_shipDamage / oBilge.floodAnimUnit);
 
 switch floodStage {
 	case FLOODSTAGES.STAGE1 :
@@ -72,5 +74,23 @@ switch floodStage {
 			image_speed = 0;	
 			image_index = 8;
 		}
+	break;
+	case FLOODSTAGES.STAGE4 :
+	if	(oDeckCtrl.shipDamage == oDeckCtrl.shipDamagePrev) {
+		oDeckCtrl.stageAnimGo[FLOODSTAGES.STAGE3] = true;	
+	}
+	if oDeckCtrl.stageAnimGo[FLOODSTAGES.STAGE4] {
+		if (image_index == 10) {
+			image_speed = 0;
+			oDeckCtrl.stageAnimGo[FLOODSTAGES.STAGE4] = false;
+		}
+		else {
+			image_speed = 1;		
+		}
+	}
+	else {
+		image_speed = 0;	
+		image_index = 10;
+	}
 	break;
 }
